@@ -1,0 +1,8 @@
+services:
+  api:
+    build: ./backend
+    ports: ["8000:8000"]
+    env_file: ./backend/.env
+  redis:            # ready for Phase 3 queues and alerts
+    image: redis:7-alpine
+    ports: ["6379:6379"]
